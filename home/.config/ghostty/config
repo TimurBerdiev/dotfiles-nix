@@ -1,0 +1,11 @@
+# Font
+font-family = Hack Nerd Font
+font-size = 15
+
+# Theme
+theme = rose-pine-moon
+
+# Window
+background-opacity = 0.8
+background-blur-radius = 50
+window-decoration = false

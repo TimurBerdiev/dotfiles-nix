@@ -16,6 +16,7 @@ in
     jq        # json on the command line
     lazygit
     neovim
+    tmux
     # the font everything renders in
     nerd-fonts.hack
   ];
@@ -54,14 +55,16 @@ in
   };
 
   # Edit-in-place: the real file stays in my repo, ~/.config just points at it.
-  home.file.".config/wezterm".source =
-    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/wezterm";
+  home.file.".config/ghostty".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/ghostty";
   home.file.".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/nvim";
   home.file.".config/herdr".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/herdr";
   home.file.".claude/settings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.claude/settings.json";
+  home.file.".tmux.conf".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.tmux.conf";
 
   home.file.".claude/CLAUDE.md".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
