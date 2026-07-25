@@ -10,3 +10,15 @@ result-*
 
 # no-mistakes local validation state - never commit in this public repo
 .no-mistakes/
+
+# Pi agent runtime artifacts + secrets (regenerated at runtime; auth.json holds API keys)
+home/.pi/agent/auth.json
+home/.pi/agent/sessions/
+home/.pi/agent/pi-hermes-memory/
+home/.pi/agent/git/
+home/.pi/agent/npm/
+home/.pi/agent/models-store.json
+home/.pi/agent/.pi-hermes-locks.sqlite
+
+# herdr plugin lock (regenerated)
+home/.config/herdr/.plugins.lock
