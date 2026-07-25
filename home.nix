@@ -8,6 +8,7 @@ in
   home.username = user;
   home.homeDirectory = "/Users/${user}";
   home.stateVersion = "24.11";
+  home.backupFileExtension = "backup";
   home.packages = with pkgs; [
     # cli i use constantly
     ripgrep   # fast search
