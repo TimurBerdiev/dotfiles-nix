@@ -64,5 +64,12 @@ in
   home.file.".tmux.conf".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.tmux.conf";
 
-
+  home.file.".claude/settings.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.claude/settings.json";
+  home.file.".claude/CLAUDE.md".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
+  home.file.".codex/AGENTS.md".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
+  home.file.".config/opencode/AGENTS.md".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
 }
