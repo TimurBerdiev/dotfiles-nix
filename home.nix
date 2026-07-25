@@ -59,6 +59,8 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/nvim";
   home.file.".config/herdr".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/herdr";
+  home.file.".pi".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi";
   home.file.".tmux.conf".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.tmux.conf";
 

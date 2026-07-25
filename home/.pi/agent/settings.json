@@ -1,0 +1,24 @@
+{
+  "lastChangelogVersion": "0.82.0",
+  "theme": "dark",
+  "defaultProvider": "openrouter",
+  "defaultModel": "xiaomi/mimo-v2.5",
+  "defaultThinkingLevel": "medium",
+  "powerline": {
+    "welcome": false
+  },
+  "powerlineShortcuts": {
+    "jumpPreviousUserMessage": null,
+    "jumpNextUserMessage": null,
+    "jumpPreviousLlmMessage": null,
+    "jumpNextLlmMessage": null,
+    "jumpChatBottom": null
+  },
+  "packages": [
+    "https://github.com/wtfzambo/spotme",
+    "https://github.com/zosmaai/pi-llm-wiki",
+    "npm:pi-hermes-memory",
+    "https://github.com/elpapi42/pi-observational-memory",
+    "npm:pi-powerline-footer"
+  ]
+}

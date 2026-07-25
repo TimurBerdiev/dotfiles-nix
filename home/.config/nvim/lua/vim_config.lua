@@ -1,7 +1,7 @@
 local o = vim.opt
 vim.g.mapleader = ' '          -- space is the leader key
 o.expandtab = true             -- spaces, not tabs
-o.shiftwidth = 2               -- 2 spaces per indent level
+o.shiftwidth = 4               -- 4 spaces per indent level
 o.number = true                -- absolute number on the cursor line, relative elsewhere
 o.relativenumber = true        -- relative line numbers for fast jumps
 o.ignorecase = true            -- search is case-insensitive by default
@@ -11,3 +11,13 @@ o.scrolloff = 16               -- keep cursor away from the screen edge
 o.undofile = true              -- persistent undo across sessions
 o.mouse = ''                   -- no mouse in nvim; also lets Herdr keep host mouse capture off so Escape isn't swallowed
 
+-- rounded borders in floating windows
+vim.o.winborder = 'rounded'
+
+-- completeopt
+vim.cmd("set completeopt+=noselect")
+
+-- diagnostics
+vim.diagnostic.config({
+    virtual_lines = false
+})
