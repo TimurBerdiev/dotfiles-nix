@@ -33,3 +33,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
         vim.highlight.on_yank()
     end,
 })
+
+-- Pane navigation with Ctrl+h/j/k/l
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left pane' })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to pane below' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to pane above' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right pane' })
+
+-- Terminal mode pane navigation
+vim.keymap.set('t', '<C-h>', '<C-\\><C-N><C-w>h', { desc = 'Move to left pane (terminal)' })
+vim.keymap.set('t', '<C-j>', '<C-\\><C-N><C-w>j', { desc = 'Move to pane below (terminal)' })
+vim.keymap.set('t', '<C-k>', '<C-\\><C-N><C-w>k', { desc = 'Move to pane above (terminal)' })
+vim.keymap.set('t', '<C-l>', '<C-\\><C-N><C-w>l', { desc = 'Move to right pane (terminal)' })

@@ -1,11 +1,14 @@
 {
-  "lastChangelogVersion": "0.82.0",
+  "lastChangelogVersion": "0.85.1",
   "theme": "dark",
-  "defaultProvider": "openrouter",
-  "defaultModel": "tencent/hy3",
-  "defaultThinkingLevel": "medium",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-luna",
+  "defaultThinkingLevel": "low",
   "powerline": {
-    "welcome": false
+    "welcome": false,
+    "model": {
+      "display": "qualified"
+    }
   },
   "powerlineShortcuts": {
     "jumpPreviousUserMessage": null,
@@ -15,10 +18,16 @@
     "jumpChatBottom": null
   },
   "packages": [
-    "https://github.com/wtfzambo/spotme",
-    "https://github.com/zosmaai/pi-llm-wiki",
-    "npm:pi-hermes-memory",
-    "https://github.com/elpapi42/pi-observational-memory",
-    "npm:pi-powerline-footer"
-  ]
+    "npm:pi-powerline-footer@latest",
+    "git:github.com/w784415/pi-agent-usage",
+    "npm:pi-web-access",
+    "npm:pi-plugin-manager",
+    "https://github.com/natori-hrj/herdr-lazy"
+  ],
+  "pi-image-gen": {
+    "defaultModel": "nano-banana",
+    "providers": {
+      "openrouter": {}
+    }
+  }
 }

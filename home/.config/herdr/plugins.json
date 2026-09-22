@@ -1,0 +1,718 @@
+[
+  {
+    "plugin_id": "herdr-automatic-rename",
+    "name": "Herdr Automatic Rename",
+    "version": "0.10.0",
+    "min_herdr_version": "0.7.1",
+    "description": "Auto-name tabs after where the work is and what is running there -- the directory, the branch, the machine reached over ssh, then the program or the task an agent reports -- and/or prefix workspaces, tabs, and agents with their 1-9 jump-key number. Each feature toggles via config.sh.",
+    "manifest_path": "/Users/timurberdiev/dotfiles-nix/home/.config/herdr/plugins/github/herdr-automatic-rename-db02a35e1e35/herdr-plugin.toml",
+    "plugin_root": "/Users/timurberdiev/dotfiles-nix/home/.config/herdr/plugins/github/herdr-automatic-rename-db02a35e1e35",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "startup": [
+      {
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "startup"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "clear",
+        "title": "Herdr Automatic Rename: strip all number prefixes",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "--clear"
+        ]
+      },
+      {
+        "id": "doctor",
+        "title": "Herdr Automatic Rename: explain this tab's name",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "doctor"
+        ]
+      },
+      {
+        "id": "reset",
+        "title": "Reset tab to automatic naming",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "reset"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.agent_detected",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "pane.agent_detected"
+        ]
+      },
+      {
+        "on": "pane.agent_status_changed",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "pane.agent_status_changed"
+        ]
+      },
+      {
+        "on": "pane.closed",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "pane.closed"
+        ]
+      },
+      {
+        "on": "pane.created",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "pane.created"
+        ]
+      },
+      {
+        "on": "pane.exited",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "pane.exited"
+        ]
+      },
+      {
+        "on": "pane.focused",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "pane.focused"
+        ]
+      },
+      {
+        "on": "pane.moved",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "pane.moved"
+        ]
+      },
+      {
+        "on": "tab.closed",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "tab.closed"
+        ]
+      },
+      {
+        "on": "tab.created",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "tab.created"
+        ]
+      },
+      {
+        "on": "tab.focused",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "tab.focused"
+        ]
+      },
+      {
+        "on": "tab.moved",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "tab.moved"
+        ]
+      },
+      {
+        "on": "tab.renamed",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "tab.renamed"
+        ]
+      },
+      {
+        "on": "workspace.closed",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "workspace.closed"
+        ]
+      },
+      {
+        "on": "workspace.created",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "workspace.created"
+        ]
+      },
+      {
+        "on": "workspace.moved",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "workspace.moved"
+        ]
+      },
+      {
+        "on": "workspace.renamed",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "workspace.renamed"
+        ]
+      },
+      {
+        "on": "workspace.reordered",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "workspace.reordered"
+        ]
+      },
+      {
+        "on": "worktree.created",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "worktree.created"
+        ]
+      },
+      {
+        "on": "worktree.opened",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "worktree.opened"
+        ]
+      },
+      {
+        "on": "worktree.removed",
+        "command": [
+          "bash",
+          "automatic-rename.sh",
+          "worktree.removed"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "qu8n",
+      "repo": "herdr-automatic-rename",
+      "resolved_commit": "25706592cf95c52042ef39d1f2740ec757104878",
+      "managed_path": "/Users/timurberdiev/.config/herdr/plugins/github/herdr-automatic-rename-db02a35e1e35",
+      "installed_unix_ms": 1789073822062
+    },
+    "warnings": [
+      "unknown event 'workspace.reordered'"
+    ]
+  },
+  {
+    "plugin_id": "herdr-lazy",
+    "name": "herdr-lazy",
+    "version": "0.38.0",
+    "min_herdr_version": "0.7.5",
+    "description": "Be lazy: a curated, batteries-included plugin distro & manager for herdr",
+    "manifest_path": "/Users/timurberdiev/dotfiles-nix/home/.config/herdr/plugins/github/herdr-lazy-7e53bfc3c6d3/herdr-plugin.toml",
+    "plugin_root": "/Users/timurberdiev/dotfiles-nix/home/.config/herdr/plugins/github/herdr-lazy-7e53bfc3c6d3",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "/bin/sh",
+          "scripts/fetch-or-build.sh"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/fetch-or-build.ps1"
+        ]
+      }
+    ],
+    "startup": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-lazy",
+          "startup"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "& .\\target\\release\\herdr-lazy.exe startup"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "init",
+        "title": "Lazy: install curated defaults",
+        "contexts": [
+          "workspace"
+        ],
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-lazy",
+          "init"
+        ]
+      },
+      {
+        "id": "init-windows",
+        "title": "Lazy: install curated defaults",
+        "contexts": [
+          "workspace"
+        ],
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "& .\\target\\release\\herdr-lazy.exe init"
+        ]
+      },
+      {
+        "id": "manage",
+        "title": "Lazy: open manage pane",
+        "contexts": [
+          "workspace"
+        ],
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "/bin/sh",
+          "scripts/open-manage-pane.sh"
+        ]
+      },
+      {
+        "id": "manage-windows",
+        "title": "Lazy: open manage pane",
+        "contexts": [
+          "workspace"
+        ],
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "$b = $env:HERDR_BIN_PATH; if (-not $b) { $b = 'herdr' }; & $b plugin pane open --plugin herdr-lazy --entrypoint manage-windows --focus"
+        ]
+      },
+      {
+        "id": "probe",
+        "title": "Lazy: probe CLI bridge",
+        "contexts": [
+          "workspace"
+        ],
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-lazy",
+          "probe"
+        ]
+      },
+      {
+        "id": "probe-windows",
+        "title": "Lazy: probe CLI bridge",
+        "contexts": [
+          "workspace"
+        ],
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "& .\\target\\release\\herdr-lazy.exe probe"
+        ]
+      },
+      {
+        "id": "sync",
+        "title": "Lazy: sync plugins to bundle",
+        "contexts": [
+          "workspace"
+        ],
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-lazy",
+          "sync"
+        ]
+      },
+      {
+        "id": "sync-windows",
+        "title": "Lazy: sync plugins to bundle",
+        "contexts": [
+          "workspace"
+        ],
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "& .\\target\\release\\herdr-lazy.exe sync"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "worktree.created",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-lazy",
+          "event"
+        ]
+      },
+      {
+        "on": "worktree.created",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "& .\\target\\release\\herdr-lazy.exe event"
+        ]
+      },
+      {
+        "on": "worktree.opened",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-lazy",
+          "event"
+        ]
+      },
+      {
+        "on": "worktree.opened",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "& .\\target\\release\\herdr-lazy.exe event"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "manage",
+        "title": "herdr-lazy",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "placement": "overlay",
+        "command": [
+          "./target/release/herdr-lazy",
+          "ui"
+        ]
+      },
+      {
+        "id": "manage-windows",
+        "title": "herdr-lazy",
+        "platforms": [
+          "windows"
+        ],
+        "placement": "overlay",
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "& .\\target\\release\\herdr-lazy.exe ui"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "natori-hrj",
+      "repo": "herdr-lazy",
+      "resolved_commit": "65414af74cc5e3a1b2c8d45e106d7b71cb423ae8",
+      "managed_path": "/Users/timurberdiev/.config/herdr/plugins/github/herdr-lazy-7e53bfc3c6d3",
+      "installed_unix_ms": 1789074614832
+    }
+  },
+  {
+    "plugin_id": "herdr-plugin-renamer",
+    "name": "Herdr Renamer",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.4",
+    "description": "Names panes, plus auto-generated worktree branches and workspaces, from the agent's first prompt via an on-device or Codex naming call.",
+    "manifest_path": "/Users/timurberdiev/dotfiles-nix/home/.config/herdr/plugins/github/herdr-plugin-renamer-4e75a9c8ef52/herdr-plugin.toml",
+    "plugin_root": "/Users/timurberdiev/dotfiles-nix/home/.config/herdr/plugins/github/herdr-plugin-renamer-4e75a9c8ef52",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "build": [
+      {
+        "command": [
+          "cargo",
+          "build",
+          "--release"
+        ]
+      },
+      {
+        "platforms": [
+          "macos"
+        ],
+        "command": [
+          "sh",
+          "naming-helper/build-if-supported.sh"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.agent_status_changed",
+        "command": [
+          "target/release/herdr-plugin-renamer"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "wyattjoh",
+      "repo": "herdr-plugin-renamer",
+      "resolved_commit": "fadec8f1cadcae8e0b4abdeaf84ceede2990b2e1",
+      "managed_path": "/Users/timurberdiev/.config/herdr/plugins/github/herdr-plugin-renamer-4e75a9c8ef52",
+      "installed_unix_ms": 1789071821826
+    }
+  },
+  {
+    "plugin_id": "usagebar",
+    "name": "Agent Usage",
+    "version": "0.5.13",
+    "min_herdr_version": "0.7.5",
+    "description": "Sidebar context meters, provider limit windows, and rate-limit toasts for Claude, Codex, OpenCode Go, OMP, Pi coding agent, and Grok, plus context meters for Cursor",
+    "manifest_path": "/Users/timurberdiev/dotfiles-nix/home/.config/herdr/plugins/github/usagebar-33803b79d616/herdr-plugin.toml",
+    "plugin_root": "/Users/timurberdiev/dotfiles-nix/home/.config/herdr/plugins/github/usagebar-33803b79d616",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "build": [
+      {
+        "command": [
+          "bash",
+          "bin/ensure-binary.sh",
+          "--in-tree"
+        ]
+      }
+    ],
+    "startup": [
+      {
+        "command": [
+          "bash",
+          "bin/run-startup.sh"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "check-updates",
+        "title": "Check for Agent Usage updates",
+        "contexts": [
+          "workspace",
+          "pane"
+        ],
+        "command": [
+          "bash",
+          "bin/run-update-check.sh"
+        ]
+      },
+      {
+        "id": "enable-toast",
+        "title": "Enable Herdr toast delivery (safe append)",
+        "contexts": [
+          "workspace",
+          "pane"
+        ],
+        "command": [
+          "bash",
+          "bin/run-setup.sh",
+          "--write-toast"
+        ]
+      },
+      {
+        "id": "open-limits",
+        "title": "Open Agent Usage pane",
+        "contexts": [
+          "workspace",
+          "pane"
+        ],
+        "command": [
+          "bash",
+          "bin/open-limits-pane.sh"
+        ]
+      },
+      {
+        "id": "refresh",
+        "title": "Refresh usage status",
+        "contexts": [
+          "workspace",
+          "pane"
+        ],
+        "command": [
+          "bash",
+          "bin/run-status.sh"
+        ]
+      },
+      {
+        "id": "setup",
+        "title": "Setup Agent Usage (show config snippets)",
+        "contexts": [
+          "workspace",
+          "pane"
+        ],
+        "command": [
+          "bash",
+          "bin/run-setup.sh"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.agent_status_changed",
+        "command": [
+          "bash",
+          "bin/run-notify.sh"
+        ]
+      },
+      {
+        "on": "pane.agent_status_changed",
+        "command": [
+          "bash",
+          "bin/run-status.sh"
+        ]
+      },
+      {
+        "on": "pane.focused",
+        "command": [
+          "bash",
+          "bin/run-status.sh"
+        ]
+      },
+      {
+        "on": "pane.focused",
+        "command": [
+          "bash",
+          "bin/run-update-check.sh",
+          "--auto"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "limits",
+        "title": "Agent Usage",
+        "placement": "split",
+        "command": [
+          "bash",
+          "bin/run-limits-pane.sh"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "senna-lang",
+      "repo": "herdr-agent-usage",
+      "resolved_commit": "df95abc0ba2edb002697d49a218868f87f823a3e",
+      "managed_path": "/Users/timurberdiev/.config/herdr/plugins/github/usagebar-33803b79d616",
+      "installed_unix_ms": 1788980122914
+    }
+  }
+]
