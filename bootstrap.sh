@@ -5,6 +5,11 @@ set -euo pipefail
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
+if [ "$(id -u)" -eq 0 ]; then
+  echo "Do not run bootstrap.sh with sudo/root. Run it as your macOS user; the script will ask for sudo only when needed."
+  exit 1
+fi
+
 echo "==> Step 1: Determinate Nix"
 if command -v nix >/dev/null 2>&1; then
   echo "    nix already installed, skipping"
@@ -56,7 +61,7 @@ NIX_BIN="$(command -v nix)"
 # "mac" is the flake host label - if you renamed it, change it in flake.nix
 # and rebuild.sh too.
 sudo "$NIX_BIN" run github:nix-darwin/nix-darwin/nix-darwin-26.05#darwin-rebuild -- \
-  switch --flake ~/.dotfiles#mac
+  switch --flake "path:$DIR#mac"
 # If this still fails with "nix: command not found", open a new terminal
 # (Determinate adds nix to new shells' PATH) and re-run ./bootstrap.sh.
 

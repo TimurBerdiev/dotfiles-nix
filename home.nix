@@ -59,10 +59,20 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/nvim";
   home.file.".config/herdr".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/herdr";
-  home.file.".pi".source =
-    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi";
-  home.file.".tmux.conf".source =
-    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.tmux.conf";
+  home.file.".pi/agent/trust.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/trust.json";
+  home.file.".pi/agent/models.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/models.json";
+  home.file.".pi/agent/settings.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/settings.json";
+  home.file.".pi/agent/extensions/herdr-auto-name.ts".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/extensions/herdr-auto-name.ts";
+  home.file.".pi/agent/extensions/herdr-agent-state.ts".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/extensions/herdr-agent-state.ts";
+  home.file.".tmux.conf" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.tmux.conf";
+    force = true;
+  };
 
   home.file.".claude/settings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.claude/settings.json";
