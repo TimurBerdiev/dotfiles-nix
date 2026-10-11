@@ -59,7 +59,22 @@ vim.lsp.config["marksman"] = {
     root_markers = { ".git", "package.json", "package-lock.json" },
 }
 
-vim.lsp.enable({"lua-language-server", "clangd", "pyright", "yamlls", "marksman"})
+vim.lsp.config["jdtls"] = {
+    cmd = { "/opt/homebrew/bin/jdtls" },
+    filetypes = { "java" },
+    root_markers = { "gradlew", "mvnw", "pom.xml", "build.gradle", "settings.gradle", ".git" },
+    settings = {
+        java = {
+            configuration = {
+                runtimes = {
+                    { name = "JavaSE-21", path = "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home" },
+                },
+            },
+        },
+    },
+}
+
+vim.lsp.enable({"lua-language-server", "clangd", "pyright", "yamlls", "marksman", "jdtls"})
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
